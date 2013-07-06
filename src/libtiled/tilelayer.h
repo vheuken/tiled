@@ -210,14 +210,16 @@ public:
     QSet<Tileset*> usedTilesets() const;
 
     /**
+     * Returns whether this tile layer has any cell for which the given
+     * \a condition returns true.
+     */
+    template<typename Condition>
+    bool hasCell(Condition condition) const;
+
+    /**
      * Returns whether this tile layer is referencing the given tileset.
      */
     bool referencesTileset(const Tileset *tileset) const;
-
-    /**
-     * Returns the region of tiles coming from the given \a tileset.
-     */
-    QRegion tilesetReferences(Tileset *tileset) const;
 
     /**
      * Removes all references to the given tileset. This sets all tiles on this
@@ -274,6 +276,7 @@ private:
     QVector<Cell> mGrid;
 };
 
+
 template<typename Condition>
 QRegion TileLayer::region(Condition condition) const
 {
@@ -297,6 +300,17 @@ QRegion TileLayer::region(Condition condition) const
 
     return region;
 }
+
+template<typename Condition>
+bool TileLayer::hasCell(Condition condition) const
+{
+    for (int i = 0, i_end = mGrid.size(); i < i_end; ++i)
+        if (condition(mGrid.at(i)))
+            return true;
+
+    return false;
+}
+
 
 static inline bool cellInUse(const Cell &cell) { return !cell.isEmpty(); }
 

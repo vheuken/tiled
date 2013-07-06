@@ -233,6 +233,7 @@ public:
     void emitMapChanged();
     void emitRegionChanged(const QRegion &region);
     void emitRegionEdited(const QRegion &region, Layer *layer);
+    void emitTilesetChanged(Tileset *tileset);
     void emitTileTerrainChanged(const QList<Tile*> &tiles);
     void emitObjectGroupChanged(ObjectGroup *objectGroup);
     void emitImageLayerChanged(ImageLayer *imageLayer);
@@ -318,6 +319,7 @@ signals:
     void tilesetMoved(int from, int to);
     void tilesetFileNameChanged(Tileset *tileset);
     void tilesetNameChanged(Tileset *tileset);
+    void tilesetChanged(Tileset *tileset);
 
     void objectsAdded(const QList<MapObject*> &objects);
     void objectsInserted(ObjectGroup *objectGroup, int first, int last);
