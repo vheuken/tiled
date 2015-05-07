@@ -171,7 +171,8 @@ SOURCES += aboutdialog.cpp \
     varianteditorfactory.cpp \
     variantpropertymanager.cpp \
     zoomable.cpp \
-    magicwandtool.cpp
+    magicwandtool.cpp \
+    imagemanager.cpp
 
 HEADERS += aboutdialog.h \
     abstractimagetool.h \
