@@ -307,7 +307,8 @@ HEADERS += aboutdialog.h \
     varianteditorfactory.h \
     variantpropertymanager.h \
     zoomable.h \
-    magicwandtool.h
+    magicwandtool.h \
+    imagemanager.h
 
 macx {
     OBJECTIVE_SOURCES += macsupport.mm
