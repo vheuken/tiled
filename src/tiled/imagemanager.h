@@ -1,7 +1,8 @@
 #ifndef IMAGEMANAGER_H
 #define IMAGEMANAGER_H
 
-#include <QImage>
+class QImage;
+
 #include <QMap>
 #include <QString>
 
